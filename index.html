@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Browse Candidates - Job Portal</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="candidates.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <div class="logo">TalentPrime</div>
+      <nav class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Jobs</a>
+        <a href="#" class="active">Candidates</a>
+        <a href="#">Employers</a>
+        <a href="#">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="btn btn-outline">Login</button>
+        <button class="btn">Sign Up</button>
+      </div>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero / Page Title -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Explore Talent</h1>
+     <p>Discover skilled professionals ready to contribute to your team.</p>
+     <div class="breadcrumb">
+     <a href="#">Home</a>
+  <span>/</span>
+  <span>Talent</span>
+</div>
+
+    </div>
+  </section>
+
+  <!-- Main Layout -->
+  <main class="container layout">
+    <!-- Filter Sidebar -->
+    <aside class="sidebar">
+      <div class="card">
+        <h2 class="card-title">Filter Candidates</h2>
+
+        <form id="filterForm">
+          <div class="form-group">
+            <label for="search">Keyword</label>
+            <input
+              type="text"
+              id="search"
+              placeholder="Search by name, role, skills..."
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="location">Location</label>
+            <select id="location">
+              <option value="">Any Location</option>
+              <option value="hyderabad">Hyderabad</option>
+              <option value="mumbai">Mumbai</option>
+              <option value="bangalore">Bangalore</option>
+              <option value="remote">Remote</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="experience">Experience</label>
+            <select id="experience">
+              <option value="">Any Experience</option>
+              <option value="fresher">Fresher</option>
+              <option value="1-3">1-3 Years</option>
+              <option value="3-5">3-5 Years</option>
+              <option value="5+">5+ Years</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Work Type</label>
+            <div class="chips">
+              <label><input type="checkbox" value="full-time" class="work-type"> Full Time</label>
+              <label><input type="checkbox" value="part-time" class="work-type"> Part Time</label>
+              <label><input type="checkbox" value="internship" class="work-type"> Internship</label>
+              <label><input type="checkbox" value="remote" class="work-type"> Remote</label>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn w-100">Apply Filters</button>
+            <button type="button" id="clearFilters" class="btn btn-outline w-100">
+              Clear
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card small-note">
+        <h3 class="card-title">For Employers</h3>
+        <p>Post jobs and reach thousands of candidates instantly.</p>
+        <button class="btn w-100">Post a Job</button>
+      </div>
+    </aside>
+
+    <!-- Candidates List -->
+    <section class="content">
+      <div class="content-header">
+        <p id="resultCount">8 candidates found</p>
+        <select id="sortBy" class="sort-select">
+          <option value="recent">Sort by: Most Recent</option>
+          <option value="experience">Sort by: Experience</option>
+          <option value="name">Sort by: Name (A-Z)</option>
+        </select>
+      </div>
+
+      <div class="candidate-list" id="candidateList">
+        <!-- Candidate Card 1 -->
+        <article
+          class="candidate-card"
+          data-name="Rahul Sharma"
+          data-role="Full Stack Developer"
+          data-location="hyderabad"
+          data-experience="1-3"
+          data-work="full-time remote"
+          data-skills="javascript react node express mongodb"
+        >
+          <div class="candidate-main">
+            <div class="avatar">RS</div>
+            <div class="candidate-info">
+              <div class="candidate-header">
+                <h3>Rahul Sharma</h3>
+                <span class="badge">Full Stack Developer</span>
+              </div>
+              <div class="candidate-meta">
+                <span>Hyderabad</span>
+                <span>1.5 years experience</span>
+                <span>Full Time · Remote friendly</span>
+              </div>
+              <div class="candidate-skills">
+                <span class="skill-pill">JavaScript</span>
+                <span class="skill-pill">React</span>
+                <span class="skill-pill">Node.js</span>
+                <span class="skill-pill">MongoDB</span>
+              </div>
+            </div>
+          </div>
+          <div class="candidate-actions">
+            <button class="btn btn-outline btn-save">Save</button>
+            <button class="btn">View Profile</button>
+          </div>
+        </article>
+
+        <!-- Candidate Card 2 -->
+        <article
+          class="candidate-card"
+          data-name="Priya Verma"
+          data-role="UI/UX Designer"
+          data-location="mumbai"
+          data-experience="3-5"
+          data-work="full-time"
+          data-skills="figma sketch adobe xd web design"
+        >
+          <div class="candidate-main">
+            <div class="avatar">PV</div>
+            <div class="candidate-info">
+              <div class="candidate-header">
+                <h3>Priya Verma</h3>
+                <span class="badge badge-green">UI/UX Designer</span>
+              </div>
+              <div class="candidate-meta">
+                <span>Mumbai</span>
+                <span>4 years experience</span>
+                <span>Full Time</span>
+              </div>
+              <div class="candidate-skills">
+                <span class="skill-pill">Figma</span>
+                <span class="skill-pill">Wireframing</span>
+                <span class="skill-pill">Prototyping</span>
+              </div>
+            </div>
+          </div>
+          <div class="candidate-actions">
+            <button class="btn btn-outline btn-save">Save</button>
+            <button class="btn">View Profile</button>
+          </div>
+        </article>
+
+        <!-- Candidate Card 3 -->
+        <article
+          class="candidate-card"
+          data-name="Ajay Kumar"
+          data-role="Backend Developer"
+          data-location="bangalore"
+          data-experience="3-5"
+          data-work="full-time remote"
+          data-skills="java spring boot microservices sql"
+        >
+          <div class="candidate-main">
+            <div class="avatar">AK</div>
+            <div class="candidate-info">
+              <div class="candidate-header">
+                <h3>Ajay Kumar</h3>
+                <span class="badge">Backend Developer</span>
+              </div>
+              <div class="candidate-meta">
+                <span>Bangalore</span>
+                <span>3 years experience</span>
+                <span>Full Time · Remote</span>
+              </div>
+              <div class="candidate-skills">
+                <span class="skill-pill">Java</span>
+                <span class="skill-pill">Spring Boot</span>
+                <span class="skill-pill">Microservices</span>
+              </div>
+            </div>
+          </div>
+          <div class="candidate-actions">
+            <button class="btn btn-outline btn-save">Save</button>
+            <button class="btn">View Profile</button>
+          </div>
+        </article>
+
+        <!-- Candidate Card 4 -->
+        <article
+          class="candidate-card"
+          data-name="Sneha Reddy"
+          data-role="Frontend Developer"
+          data-location="hyderabad"
+          data-experience="1-3"
+          data-work="full-time"
+          data-skills="html css javascript react"
+        >
+          <div class="candidate-main">
+            <div class="avatar">SR</div>
+            <div class="candidate-info">
+              <div class="candidate-header">
+                <h3>Sneha Reddy</h3>
+                <span class="badge badge-purple">Frontend Developer</span>
+              </div>
+              <div class="candidate-meta">
+                <span>Hyderabad</span>
+                <span>2 years experience</span>
+                <span>Full Time</span>
+              </div>
+              <div class="candidate-skills">
+                <span class="skill-pill">HTML</span>
+                <span class="skill-pill">CSS</span>
+                <span class="skill-pill">JavaScript</span>
+                <span class="skill-pill">React</span>
+              </div>
+            </div>
+          </div>
+          <div class="candidate-actions">
+            <button class="btn btn-outline btn-save">Save</button>
+            <button class="btn">View Profile</button>
+          </div>
+        </article>
+
+        <!-- Candidate Card 5 -->
+        <article
+          class="candidate-card"
+          data-name="Vikram Singh"
+          data-role="DevOps Engineer"
+          data-location="remote"
+          data-experience="5+"
+          data-work="full-time remote"
+          data-skills="aws docker kubernetes ci cd"
+        >
+          <div class="candidate-main">
+            <div class="avatar">VS</div>
+            <div class="candidate-info">
+              <div class="candidate-header">
+                <h3>Vikram Singh</h3>
+                <span class="badge badge-orange">DevOps Engineer</span>
+              </div>
+              <div class="candidate-meta">
+                <span>Remote</span>
+                <span>6+ years experience</span>
+                <span>Full Time · Remote</span>
+              </div>
+              <div class="candidate-skills">
+                <span class="skill-pill">AWS</span>
+                <span class="skill-pill">Docker</span>
+                <span class="skill-pill">Kubernetes</span>
+              </div>
+            </div>
+          </div>
+          <div class="candidate-actions">
+            <button class="btn btn-outline btn-save">Save</button>
+            <button class="btn">View Profile</button>
+          </div>
+        </article>
+
+        <!-- Candidate Card 6 -->
+        <article
+          class="candidate-card"
+          data-name="Ananya Rao"
+          data-role="Data Analyst"
+          data-location="bangalore"
+          data-experience="1-3"
+          data-work="full-time"
+          data-skills="python sql power bi excel"
+        >
+          <div class="candidate-main">
+            <div class="avatar">AR</div>
+            <div class="candidate-info">
+              <div class="candidate-header">
+                <h3>Ananya Rao</h3>
+                <span class="badge badge-green">Data Analyst</span>
+              </div>
+              <div class="candidate-meta">
+                <span>Bangalore</span>
+                <span>2.5 years experience</span>
+                <span>Full Time</span>
+              </div>
+              <div class="candidate-skills">
+                <span class="skill-pill">Python</span>
+                <span class="skill-pill">SQL</span>
+                <span class="skill-pill">Power BI</span>
+              </div>
+            </div>
+          </div>
+          <div class="candidate-actions">
+            <button class="btn btn-outline btn-save">Save</button>
+            <button class="btn">View Profile</button>
+          </div>
+        </article>
+
+        <!-- Candidate Card 7 -->
+        <article
+          class="candidate-card"
+          data-name="Kiran Patel"
+          data-role="Mobile App Developer"
+          data-location="mumbai"
+          data-experience="1-3"
+          data-work="full-time"
+          data-skills="flutter android ios dart"
+        >
+          <div class="candidate-main">
+            <div class="avatar">KP</div>
+            <div class="candidate-info">
+              <div class="candidate-header">
+                <h3>Kiran Patel</h3>
+                <span class="badge badge-purple">Mobile Developer</span>
+              </div>
+              <div class="candidate-meta">
+                <span>Mumbai</span>
+                <span>2 years experience</span>
+                <span>Full Time</span>
+              </div>
+              <div class="candidate-skills">
+                <span class="skill-pill">Flutter</span>
+                <span class="skill-pill">Android</span>
+                <span class="skill-pill">iOS</span>
+              </div>
+            </div>
+          </div>
+          <div class="candidate-actions">
+            <button class="btn btn-outline btn-save">Save</button>
+            <button class="btn">View Profile</button>
+          </div>
+        </article>
+
+        <!-- Candidate Card 8 -->
+        <article
+          class="candidate-card"
+          data-name="Divya Nair"
+          data-role="QA Engineer"
+          data-location="hyderabad"
+          data-experience="1-3"
+          data-work="full-time internship"
+          data-skills="manual testing automation selenium"
+        >
+          <div class="candidate-main">
+            <div class="avatar">DN</div>
+            <div class="candidate-info">
+              <div class="candidate-header">
+                <h3>Divya Nair</h3>
+                <span class="badge badge-orange">QA Engineer</span>
+              </div>
+              <div class="candidate-meta">
+                <span>Hyderabad</span>
+                <span>1.5 years experience</span>
+                <span>Full Time · Open to Internship</span>
+              </div>
+              <div class="candidate-skills">
+                <span class="skill-pill">Manual Testing</span>
+                <span class="skill-pill">Automation</span>
+                <span class="skill-pill">Selenium</span>
+              </div>
+            </div>
+          </div>
+          <div class="candidate-actions">
+            <button class="btn btn-outline btn-save">Save</button>
+            <button class="btn">View Profile</button>
+          </div>
+        </article>
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <button class="page-btn active">1</button>
+        <button class="page-btn">2</button>
+        <button class="page-btn">3</button>
+        <button class="page-btn next">Next ›</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <h4>JobPortal</h4>
+        <p>Simple demo candidate listing page for your project.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#">About</a>
+        <a href="#">Privacy</a>
+        <a href="#">Help</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="candidates.js" defer></script>
+</body>
+</html>
